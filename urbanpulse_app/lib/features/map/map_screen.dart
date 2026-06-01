@@ -151,10 +151,10 @@ class _MapScreenState extends ConsumerState<MapScreen> {
 
                           // 3. CircleLayer (Traffic Circle Markers)
                           trafficAsync.when(
-                            loading: () => const CircleLayer(circles: []),
-                            error: (_, __) => const CircleLayer(circles: []),
+                            loading: () => const CircleLayer(circles: <CircleMarker<Object>>[]),
+                            error: (_, __) => const CircleLayer(circles: <CircleMarker<Object>>[]),
                             data: (junctions) => CircleLayer(
-                              circles: junctions.map((j) {
+                              circles: junctions.map<CircleMarker<Object>>((j) {
                                 final lat = (j['latitude'] as num).toDouble();
                                 final lng = (j['longitude'] as num).toDouble();
                                 final cong = (j['congestion_level'] as num).toDouble();

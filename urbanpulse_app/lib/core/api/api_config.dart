@@ -1,11 +1,17 @@
+import 'package:flutter/foundation.dart';
+
 /// API configuration constants for the UrbanPulse backend.
 class ApiConfig {
   ApiConfig._();
 
   /// Base URL for the UrbanPulse API.
-  /// 10.0.2.2 resolves to host localhost from Android emulators.
-  /// For physical devices on the same Wi-Fi, use your machine's LAN IP.
-  static const String baseUrl = 'http://10.0.2.2:8000';
+  /// Dynamically detects if running on Web (localhost) or Android emulator (10.0.2.2).
+  static String get baseUrl {
+    if (kIsWeb) {
+      return 'http://localhost:8000';
+    }
+    return 'http://10.0.2.2:8000';
+  }
 
   /// API endpoints – must match FastAPI routes in backend/main.py
   static const String liveAqi = '/api/live/aqi';
