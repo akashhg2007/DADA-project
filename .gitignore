@@ -1,0 +1,75 @@
+# ─── Python ───────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.env
+.venv
+env/
+venv/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# ─── Jupyter ──────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ─── Data / Models (large files) ──────────────────────
+# Uncomment lines below if you DO want to commit data:
+# !data/raw/*.csv
+# !data/processed/*.csv
+# !models/*.joblib
+
+# ─── Flutter / Dart ───────────────────────────────────
+urbanpulse_app/.dart_tool/
+urbanpulse_app/.flutter-plugins
+urbanpulse_app/.flutter-plugins-dependencies
+urbanpulse_app/.packages
+urbanpulse_app/build/
+urbanpulse_app/.idea/
+urbanpulse_app/*.iml
+urbanpulse_app/android/.gradle/
+urbanpulse_app/android/local.properties
+urbanpulse_app/android/key.properties
+urbanpulse_app/android/app/debug.keystore
+urbanpulse_app/ios/Flutter/flutter_export_environment.sh
+urbanpulse_app/ios/Pods/
+urbanpulse_app/ios/.symlinks/
+urbanpulse_app/macos/Flutter/
+urbanpulse_app/linux/flutter/
+urbanpulse_app/windows/flutter/
+urbanpulse_app/web/
+# Keep web/index.html but ignore generated assets:
+!urbanpulse_app/web/index.html
+!urbanpulse_app/web/manifest.json
+!urbanpulse_app/web/favicon.png
+!urbanpulse_app/web/icons/
+
+# ─── IDE ──────────────────────────────────────────────
+.idea/
+*.iml
+.vscode/
+*.suo
+*.user
+*.sln.docstates
+.DS_Store
+Thumbs.db
+
+# ─── OS ───────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ─── Secrets ──────────────────────────────────────────
+*.pem
+*.key
+*.env
+.env.*
+secrets.yaml

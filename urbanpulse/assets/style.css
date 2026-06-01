@@ -1,0 +1,242 @@
+/* 1. Import Inter font and Material Icons from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+/* 2. Set body background */
+html, body, [class*="st-"] {
+    font-family: 'Inter', sans-serif !important;
+}
+
+.stApp {
+    background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 100%) fixed !important;
+    color: #F1F5F9 !important;
+}
+
+/* 3. Style header background to transparent */
+.stApp > header {
+    background-color: transparent !important;
+}
+
+/* Hide broken Streamlit sidebar collapse toggle visually, but keep in DOM for JS click */
+[data-testid="collapsedControl"],
+button[kind="header"],
+.stSidebarCollapsedControl {
+    visibility: hidden !important;
+    position: absolute !important;
+    pointer-events: none !important;
+}
+
+/* 4. Main container formatting */
+.block-container {
+    max-width: 1400px !important;
+    padding: 1rem 2rem !important;
+}
+
+/* 5. Hide default Streamlit metrics as we use custom cards */
+div[data-testid="stMetric"] {
+    display: none !important;
+}
+
+/* 6. Buttons layout */
+button, .stButton > button {
+    border-radius: 12px !important;
+    background-color: #4F46E5 !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    padding: 0.5rem 1.5rem !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease-in-out !important;
+}
+
+button:hover, .stButton > button:hover {
+    transform: scale(1.02) !important;
+    background-color: #4338CA !important;
+    box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4) !important;
+}
+
+/* Sidebar hamburger toggle — ghost icon button style */
+[data-testid="stButton"] button[kind="secondary"]#sidebar_toggle_btn,
+div:has(> [data-testid="stButton"] > button[title="Toggle sidebar"]) button {
+    background-color: rgba(255,255,255,0.07) !important;
+    border: 1px solid rgba(255,255,255,0.12) !important;
+    border-radius: 10px !important;
+    padding: 0.4rem 0.75rem !important;
+    font-size: 1.1rem !important;
+    color: #94A3B8 !important;
+    box-shadow: none !important;
+}
+
+div:has(> [data-testid="stButton"] > button[title="Toggle sidebar"]) button:hover {
+    background-color: rgba(79, 70, 229, 0.2) !important;
+    color: #F1F5F9 !important;
+    border-color: rgba(79, 70, 229, 0.5) !important;
+    transform: scale(1.04) !important;
+    box-shadow: none !important;
+}
+
+/* 7. Tabs aesthetics */
+button[data-baseweb="tab"] {
+    color: #94A3B8 !important;
+    font-weight: 500 !important;
+    border-bottom: 2px solid transparent !important;
+    transition: all 0.2s ease !important;
+}
+
+button[data-baseweb="tab"][aria-selected="true"] {
+    color: #4F46E5 !important;
+    border-bottom: 2px solid #4F46E5 !important;
+    font-weight: 700 !important;
+}
+
+/* 8. Customized Scrollbar */
+::-webkit-scrollbar {
+    width: 6px !important;
+    height: 6px !important;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #334155 !important;
+    border-radius: 10px !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #475569 !important;
+}
+
+/* 9. .glass glassmorphism class definition */
+.glass {
+    background: rgba(30, 41, 59, 0.6) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 16px !important;
+    padding: 1.5rem !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2) !important;
+}
+
+/* 10. Styling custom kpi cards using glass */
+.kpi-card {
+    background: rgba(30, 41, 59, 0.6) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 16px !important;
+    padding: 1.5rem !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.3s ease !important;
+}
+
+.kpi-card:hover {
+    transform: translateY(-4px) !important;
+    border-color: rgba(79, 70, 229, 0.4) !important;
+    box-shadow: 0 12px 40px 0 rgba(79, 70, 229, 0.15) !important;
+}
+
+.kpi-title {
+    font-size: 0.85rem !important;
+    text-transform: uppercase !important;
+    color: #94A3B8 !important;
+    font-weight: 600 !important;
+    letter-spacing: 1.2px !important;
+    margin-bottom: 0.6rem !important;
+}
+
+.kpi-value {
+    font-size: 2.3rem !important;
+    font-weight: 800 !important;
+    color: #F1F5F9 !important;
+    margin-bottom: 0.4rem !important;
+}
+
+.kpi-subtitle {
+    font-size: 0.8rem !important;
+    color: #64748B !important;
+}
+
+/* Badges configured for dark contrast */
+.badge {
+    padding: 0.3rem 0.7rem !important;
+    border-radius: 50px !important;
+    font-size: 0.72rem !important;
+    font-weight: 700 !important;
+    display: inline-block !important;
+}
+
+.badge-green { background-color: rgba(16, 185, 129, 0.15) !important; color: #34d399 !important; border: 1.5px solid rgba(16, 185, 129, 0.3) !important; }
+.badge-orange { background-color: rgba(245, 158, 11, 0.15) !important; color: #fbbf24 !important; border: 1.5px solid rgba(245, 158, 11, 0.3) !important; }
+.badge-red { background-color: rgba(239, 68, 68, 0.15) !important; color: #f87171 !important; border: 1.5px solid rgba(239, 68, 68, 0.3) !important; }
+.badge-blue { background-color: rgba(59, 130, 246, 0.15) !important; color: #60a5fa !important; border: 1.5px solid rgba(59, 130, 246, 0.3) !important; }
+
+/* Dynamic Factual Insight cards */
+.fact-card {
+    background: rgba(30, 41, 59, 0.4) !important;
+    border-left: 5px solid #e67e22 !important;
+    border-radius: 8px !important;
+    padding: 1.2rem !important;
+    margin-bottom: 1.2rem !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.04) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.04) !important;
+}
+
+.fact-header {
+    font-weight: 700 !important;
+    color: #fbbf24 !important;
+    font-size: 0.85rem !important;
+    text-transform: uppercase !important;
+    margin-bottom: 0.5rem !important;
+    letter-spacing: 0.8px !important;
+}
+
+.fact-body {
+    font-size: 1.15rem !important;
+    font-weight: 500 !important;
+    color: #e2e8f0 !important;
+    line-height: 1.5 !important;
+}
+
+/* Sidebar Dark Theme Adjustments */
+section[data-testid="stSidebar"] {
+    background-color: #0b0e14 !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+/* Custom Command Bar Inputs Style: selectbox and date_input background #1E293B, border none, border-radius 12px */
+div[data-baseweb="select"] > div, 
+div[data-baseweb="input"] > div,
+div[data-testid="stDateInput"] > div > div {
+    background-color: #1E293B !important;
+    border: none !important;
+    border-radius: 12px !important;
+    color: #F1F5F9 !important;
+}
+
+div[data-baseweb="select"] input, 
+div[data-baseweb="input"] input {
+    color: #F1F5F9 !important;
+}
+
+/* 11. Responsive Mobile Styles */
+@media (max-width: 768px) {
+    h1 { font-size: 1.8rem !important; }
+    .glass { padding: 1rem !important; }
+    .block-container { padding: 1rem 0.5rem !important; }
+}
+
+/* 12. Secondary CTA button style */
+.secondary-btn button,
+.secondary-btn div.stDownloadButton > button {
+    background-color: transparent !important;
+    border: 1px solid #4F46E5 !important;
+    color: #F1F5F9 !important;
+}
+
+.secondary-btn button:hover,
+.secondary-btn div.stDownloadButton > button:hover {
+    background-color: rgba(79, 70, 229, 0.1) !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 15px rgba(79, 70, 229, 0.2) !important;
+}
